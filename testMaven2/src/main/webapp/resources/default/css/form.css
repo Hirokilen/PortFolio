@@ -1,0 +1,313 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+
+h2 {
+	text-align: center;
+}
+
+.container {
+	font-family: 'Droid Serif', serif;
+}
+
+.main, .mainUnePersonne, .mainUnePersonne_notif, .main_numIdent {
+	width: 27%;
+	float: left;
+	padding: 10px 60px 40px;
+	box-shadow: 0 0 10px;
+	border-radius: 15px 50px;
+	font-size: 75%;
+	margin-top: 13%;
+	margin-left: 31%;
+}
+
+.main_numIdent {
+	margin-left: 30%;
+	width: 33%;
+}
+
+.mainUnePersonne {
+	width: 46%;
+	margin-left: 23%;
+}
+
+.mainUnePersonne_notif {
+	width: 67%;
+	margin-left: 13%;
+}
+
+#index {
+	margin-top: 6%;
+}
+
+.Bouton_notifs {
+	margin-left: 22%;
+	display: block;
+	margin-bottom: 1%;
+	font-size: 130%;
+}
+
+.tab_infos {
+	margin-bottom: 10px;
+}
+
+.Valider {
+	margin-left: 30%;
+	width: 38%;
+	font-size: 130%;
+}
+
+.Valider_NIR {
+	margin-left: 10%;
+	width: 20%;
+	font-size: 94%;
+}
+
+.Bouton, .AffichageListe, .AffichageAllNom, .Bouton_notifs,
+	.AffichageOne, .Valider, .Valider_NIR {
+	background-color: #e6e6e6;
+	border: 2px solid #008CBA;
+	color: black;
+	text-shadow: 0 1px 0 #fff;
+	margin-top: 4%;
+	padding: 1%;
+	border-radius: 12px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-family: "Droid Serif", serif;
+}
+
+.erreur {
+	font-size: 130%;
+	font-family: "Droid Serif", serif;
+	margin-left: 5%;
+}
+
+.Bouton {
+	font-size: 130%;
+}
+
+.Bouton:hover, .AffichageListe:hover, .AffichageAllNom:hover, .yolo:hover,
+	.Bouton_notifs:hover, .AffichageOne:hover, .Valider:hover,.Valider_NIR:hover {
+	background-color: #008CBA;
+	color: white;
+}
+
+.AffichageAllNom, .AffichageListe {
+	margin-left: 13%;
+	width: 40%;
+	font-size: 130%;
+}
+
+.AffichageOne {
+	margin-left: 5%;
+	width: 40%;
+	font-size: 130%;
+}
+
+.labelNom {
+	margin-left: 113px;
+}
+
+.Saisir, .Saisir_NIR {
+	background: linear-gradient(to bottom, #D3D3D3 0%, #D9D9D9 38%, #E5E5E5 82%, #E7E7E7
+		100%) repeat scroll 0% 0% transparent;
+	padding: 1% 4%;
+	color: #999;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #FFF;
+	border: 1px solid rgba(16, 103, 133, 0.6);
+	box-shadow: 0 0 3px rgba(255, 255, 255, 0.5), inset 0 1px 4px
+		rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	outline: 0;
+	width: 35%;
+	margin-top: 3%;
+}
+
+.Saisir {
+	margin-left: 27%;
+}
+
+.Saisir_NIR {
+	margin-left: 23%;
+	width: 12%;
+}
+
+.Saisir:focus, .Saisir_NIR:focus {
+	border: 1px solid #000;
+	box-shadow: 0 0 3px #000, inset 0 1px 4px #000;
+}
+
+.select_liste {
+	border: 0;
+	color: #000;
+	background: transparent;
+	font-size: 15px;
+	font-family: "Droid Serif", serif;
+	padding: 2px 10px;
+	width: 400px;
+	*background: #58B14C;
+	-webkit-appearance: none;
+}
+
+#mainselection {
+	overflow: hidden;
+	width: 45%;
+	-moz-border-radius: 9px 9px 9px 9px;
+	-webkit-border-radius: 9px 9px 9px 9px;
+	border-radius: 9px 9px 9px 9px;
+	box-shadow: 1px 1px 11px #000;
+	background: url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll
+		97% center rgb(255, 255, 255);
+	margin-left: 28%;
+}
+
+.ckc_PS {
+	margin-left: 2%;
+}
+
+.label_PS {
+	margin-left: 5%;
+}
+
+/* INPUT YOLO CSS ANIMATION */
+.yolo {
+	width: 165px;
+	height: 47px;
+	border: none;
+	background: none repeat scroll 0% 0% #FFF;
+	color: #FFF;
+	position: relative;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 10px;
+	animation: 4s ease 0s normal none infinite running animated_div;
+	border-radius: 57px;
+	margin-left: 300px;
+	margin-top: 150px;
+}
+
+@
+keyframes animated_div { 0% {
+	transform: rotate(0deg);
+	left: 0px;
+	top: 0px;
+}
+
+25%
+{
+transform
+:
+ 
+rotate
+(360deg);left
+:
+ 
+800
+px
+;
+ 
+top
+:
+ 
+0
+px
+;
+}
+50%
+{
+transform
+:
+ 
+rotate
+(0deg);left
+:
+ 
+800
+px
+;
+ 
+top
+:
+ 
+500
+px
+;
+}
+75%
+{
+transform
+:
+ 
+rotate
+(-360deg);left
+:
+ 
+0
+px
+;
+ 
+top
+:
+ 
+500
+px
+;
+}
+100%
+{
+transform
+:
+ 
+rotate
+(0deg);left
+:
+ 
+0
+px
+;
+ 
+top
+:
+ 
+0
+px
+;
+}
+}
+.animated-gif-container {
+	/*    
+  background-image:url(http://winnerhun.uw.hu/vigyorpofa.gif);
+  background-repeat:no-repeat;
+  */
+	width: 116px;
+	height: 77px;
+	float: right;
+	margin-right: 20px;
+	background: #FFF;
+	border: none;
+}
+
+.exemple {
+	width: 116px;
+	height: 77px;
+	float: right;
+	margin-right: 20px;
+	background: #FFF;
+	border: none;
+	color: white;
+}
+
+.exemple:hover {
+	background-color: #008CBA;
+}
+
+.animated-gif-container:hover {
+	background: #e0ffc7
+		url(https://media.giphy.com/media/VofiGkwOdH2fu/giphy.gif) no-repeat
+		center center;
+	background-color: #008CBA;
+}
+
+/* CSS ANIME CHECKBOX */

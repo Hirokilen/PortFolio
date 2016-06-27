@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Saisir numIdent</title>
+	<h:outputStylesheet library="default" name="css/form.css" />
+	<h:outputScript name="js/ValidKeyPr.js" library="default" />
+</h:head>
+<h:body>
+	<h:form>
+		<div>
+			<h:commandButton id="exemple" action="#{AffichageBean.Exemple}"
+				styleClass="exemple" value="HELP" />
+		</div>
+		<h:outputText id="erreur2" value="#{AffichageBean.exemple}"
+			styleClass="label_ex" />
+	</h:form>
+	<h:panelGroup id="container" styleClass="container">
+		<h:panelGroup id="index" styleClass="main_numIdent">
+			<h:form id="login" prependId="false">
+				<h2>Saisir numIdent :</h2>
+				<h:panelGroup id="error">
+					<h:messages style="color:red;position: absolute;font-size: 17px;" />
+				</h:panelGroup>
+				<h:inputText value="#{AffichageBean.numIdent}" id="numIdent"
+					onkeydown="if(event.keyCode==32) return false;"
+					p:placeholder="Entrer un numIdent" styleClass="Saisir"
+					onkeypress='return validateIdent(event);' autocomplete="off"
+					p:autofocus="true" style="margin-top: 20%;" maxlength="#{AffichageBean.maxLength}">
+					<f:validateRequired />
+					<f:validateRegex pattern="[ 0-9]{6}[a-bA-B0-9][0-9 ]*" />
+					<f:validateLength minimum="15" maximum="15"
+						disabled="#{AffichageBean.ok_nir}" />
+					<f:validateLength minimum="13" maximum="13"
+						disabled="#{!AffichageBean.ok_nir}" />
+					<f:ajax event="keyup" render="error" />
+				</h:inputText>
+				<h:outputText id="PS_label" value="PS :" styleClass="label_PS" />
+				<h:selectBooleanCheckbox value="PS" id="roundedTwo"
+					styleClass="ckc_PS">
+					<f:ajax listener="#{AffichageBean.Active_nir}" render="@form" />
+				</h:selectBooleanCheckbox>
+				<h:panelGroup id="pg_cleNir" rendered="#{AffichageBean.ok_nir}">
+					<h:inputText maxlength="2" value="#{AffichageBean.recuNIR}"
+						id="NIR" onkeydown="if(event.keyCode==32) return false;"
+						p:placeholder="clé NIR" label="clé NIR" styleClass="Saisir_NIR"
+						onkeypress='return validateQty(event);' autocomplete="off">
+						<f:validateRequired />
+						<f:validateLongRange minimum="1" maximum="97" />
+						<f:ajax event="keyup" render="error" />
+						<f:ajax event="click" render="error" />
+					</h:inputText>
+					<h:commandButton id="AffichageOn" value="Valider clé NIR"
+						action="#{AffichageBean.ValiderNIR}" styleClass="Valider_NIR">
+					</h:commandButton>
+					<h:outputText id="erreur" value="#{AffichageBean.erreur}"
+						styleClass="erreur" />
+				</h:panelGroup>
+				<h:panelGroup id="pg_clePS" rendered="#{!AffichageBean.ok_nir}">
+					<h:inputText value="#{AffichageBean.recuClePS}" label="clé PS"
+						id="clePS" p:placeholder="clé PS" styleClass="Saisir_NIR"
+						onkeydown="if(event.keyCode==32) return false;" autocomplete="off"
+						onkeypress='return validateQty(event);'>
+						<f:validateRequired disabled="" />
+						<f:validateLongRange minimum="0" maximum="9" />
+						<f:ajax event="keyup" render="error" />
+						<f:ajax event="click" render="error" />
+					</h:inputText>
+					<h:commandButton id="AffichageclePs" label="clé PS"
+						value="Valider clé PS" action="#{AffichageBean.calculClePS}"
+						styleClass="Valider_NIR">
+					</h:commandButton>
+					<h:outputText id="erreur2" value="#{AffichageBean.erreur}"
+						styleClass="erreur" />
+				</h:panelGroup>
+				<h:commandButton id="AffichageOne" value="Valider"
+					action="#{AffichageBean.UnePersonne}" styleClass="Valider" />
+			</h:form>
+		</h:panelGroup>
+	</h:panelGroup>
+</h:body>
+</html>

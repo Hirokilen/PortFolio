@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Moteur de recherche de notification</title>
+	<h:outputStylesheet library="default" name="css/form.css" />
+</h:head>
+<h:body>
+	<h:form>
+		<div>
+			<h:commandButton id="animated-gif-container" action="pages/Bonus/gif"
+				styleClass="animated-gif-container" />
+		</div>
+	</h:form>
+	<h:form>
+		<h:commandButton id="yolo" value="C'est génial" styleClass="yolo"
+			action="pages/Bonus/BONUS" />
+	</h:form>
+	<h:panelGroup id="container" styleClass="container">
+		<h:panelGroup id="index" styleClass="main">
+			<h:form>
+				<h2>Recherche par :</h2>
+				<h:commandButton id="AffichageOne" value="numero d'identité"
+					action="pages/Saisie/SaisirNumIdent" styleClass="AffichageOne" />
+				<h:commandButton id="AffichageAllNom" value="nom"
+					action="pages/Saisie/SaisirNom" styleClass="AffichageAllNom" />
+				<h:commandButton id="AffichageNomSociete" value="nom de société"
+					action="pages/Saisie/SaisirNomSociete" styleClass="AffichageOne" />
+				<h:commandButton id="AffichageListe" value="numero d'indu"
+					action="pages/Saisie/SaisirNumIndu" styleClass="AffichageListe" />
+			</h:form>
+		</h:panelGroup>
+	</h:panelGroup>
+</h:body>
+</html>

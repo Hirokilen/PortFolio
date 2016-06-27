@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Affichage d'une personne</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"></link>
+    </h:head>
+    <h:body>
+    <h:panelGroup id="container" styleClass="container">
+    <h:panelGroup id="main" styleClass="mainUnePersonne">
+    	<h2>Resultat correspondant à #{AffichageBean.numIdent}</h2> 
+    	<h:form>
+        
+    	<h:commandButton value="Afficher Notifications" actionListener="#{AffichageBean.nohide}"  action="#{AffichageBean.OnePersonne}" styleClass="Bouton_notifs">
+                <f:ajax listener="#{AffichageBean.listener}" render="notifs" />
+        </h:commandButton>
+        </h:form>            
+
+    	<h:panelGroup id="infos" styleClass="tab_infos">
+            <h:dataTable value="#{AffichageBean.unePersonne}" var="employee"
+    			styleClass="pure-table" style ="margin: 10px;">
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Numero d'identité</f:facet>
+    				<!-- row record -->
+    				#{employee.numIdent}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Type destinataire</f:facet>
+    				#{employee.typeDestinataire}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Date de naissance</f:facet>
+    				#{employee.dateNaissance}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Rang</f:facet>
+    				#{employee.rang}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Civilité</f:facet>
+    				#{employee.civilite}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Nom</f:facet>
+    				#{employee.nom}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Prénom</f:facet>
+    				#{employee.prenom}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Nombres de notifs</f:facet>
+    				#{employee.notifs.size()}
+    			</h:column>
+    		</h:dataTable>
+    		</h:panelGroup>
+    		
+    		
+            <h:panelGroup id="notifs">
+            <h:dataTable rendered="#{AffichageBean.ok_notifs}" value="#{AffichageBean.listeNotif}" var="notif"
+    			styleClass="pure-table">
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Numero d'indu</f:facet>
+    				<!-- row record -->
+    				#{notif.numIndu}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Date</f:facet>
+    				<h:outputText value="#{notif.date}">  
+    				<!-- GMT-2 pour eviter le changement de jour à l'affichage -->
+    				<f:convertDateTime pattern="dd/MM/yyyy" timeZone="Etc/GMT-2"></f:convertDateTime>  
+    				</h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Centre</f:facet>
+    				#{notif.centre}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Indication Ligne</f:facet>
+    				#{notif.indicationLigne}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Date notif</f:facet>
+    				<h:outputText value="#{notif.dateNotif}">  
+    				<!-- GMT-2 pour eviter le changement de jour à l'affichage -->
+    				<f:convertDateTime pattern="dd/MM/yyyy" timeZone="Etc/GMT-2"></f:convertDateTime>  
+    				</h:outputText>
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Montant Initial</f:facet>
+    				#{notif.montantInitial}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Montant solde</f:facet>
+    				#{notif.montantSolde}
+    			</h:column>
+    			<h:column>
+    				<f:facet name="header">Numero d'archive</f:facet>
+    				#{notif.numArchive}
+    			</h:column>
+    		</h:dataTable>
+            </h:panelGroup>
+    		<h:form>
+    			<h:commandButton id ="Retour" value="Retour" action="/index.xhtml"  styleClass="Bouton">
+    			<f:ajax listener="#{AffichageBean.hide}" render="notifs,infos" />
+   				</h:commandButton>
+    		</h:form>
+    </h:panelGroup>
+    </h:panelGroup>
+    </h:body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Saisir numIdent</title>
+	<h:outputStylesheet library="default" name="css/form.css" />
+	<h:outputScript name="js/ValidKeyPr.js" library="default" />
+</h:head>
+<h:body>
+	<h:panelGroup id="container" styleClass="container">
+		<h:panelGroup id="index" styleClass="main">
+			<h:form>
+				<h2>Saisir nom ou les premières lettres :</h2>
+				<h:panelGroup id="error">
+					<h:messages style="color:red;position: absolute;font-size: 17px;" />
+				</h:panelGroup>
+				<h:inputText value="#{AffichageBean.nom}" id="nom"
+					p:placeholder="Entrer un nom" styleClass="Saisir"
+					autocomplete="off" p:autofocus="true" style="margin-top: 10%;"
+					onkeypress='return validateNom(event);' maxlength="25">
+					<f:validateRequired />
+					<f:validateRegex pattern="[a-zA-Z -]*" />
+					<f:ajax event="keyup" render="error" />
+				</h:inputText>
+				<h:commandButton id="AffichageAllNom" value="Valider"
+					action="#{AffichageBean.listNoms}" styleClass="Valider" />
+			</h:form>
+		</h:panelGroup>
+	</h:panelGroup>
+</h:body>
+</html>
