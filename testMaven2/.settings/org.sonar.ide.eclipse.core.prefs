@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-extraProperties=sonar.jdbc.username\=sonar\r\nsonar.host.url\=http\://55.156.4.78\:9000\r\nsonar.jdbc.password\=sonar\r\nsonar.jdbc.url\=jdbc\:h2\:tcp\://55.156.4.78\:9092/sonar
+extraProperties=sonar.host.url\=http\://55.156.4.78\:9000\r\nsonar.jdbc.password\=sonar\r\nsonar.jdbc.url\=jdbc\:h2\:tcp\://55.156.4.78\:9092/sonar\r\nsonar.jdbc.username\=sonar
 projectKey=testMaven2\:testMaven2
 serverUrl=http\://localhost\:9000
 version=2
